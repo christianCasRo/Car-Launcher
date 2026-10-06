@@ -1,2 +1,1 @@
-# Car-Launcher
-Cupra Car Launcher
+# Cupra Car Launcher
