@@ -1,106 +1,69 @@
 # Cupra Car Launcher
 
-Un launcher Android avanzado y de alta gama diseñado específicamente para pantallas de vehículos (Car Head Units), tablets Android en salpicaderos y sistemas embebidos como Raspberry Pi. Inspirado en el diseño deportivo y tecnológico de Cupra (acentos cobre/neón, interfaz oscura inmersiva y widgets de alto rendimiento).
+Transforma la pantalla de tu vehículo, tablet o sistema integrado en un centro de mando de alta gama. Inspirado en el diseño deportivo de Cupra, este launcher ofrece una interfaz inmersiva, oscura y con acentos de color que moderniza por completo el salpicadero de tu coche.
+
+Diseñado para evitar distracciones al volante, cuenta con controles grandes, información en tiempo real y un sistema de perfiles para proteger tu configuración.
 
 ---
 
-## 🌟 Pantallas y Paneles Principales
+## 🌟 Experiencia de Conducción en 3 Paneles
 
-El launcher se estructura en una interfaz limpia de **3 paneles principales** + **Barra de Navegación Inferior (Dock)**:
+La pantalla principal está dividida de forma inteligente para que tengas todo lo importante a un solo vistazo:
 
-1. **Panel Izquierdo (Reproductor de Multimedia)**
-   - Carátula de álbum / disco de vinilo dinámica (40% de altura para máximo impacto visual).
-   - Control de reproducción (Play/Pause, Pistas Siguiente/Anterior, Favoritos, Volumen).
-   - Título y artista con marquesina deslizante automática.
-   - Sintonización con sesiones activas de media (Spotify, YouTube Music, Radio, etc.).
+### 1. Panel Multimedia
+Controla tu música sin perder de vista la carretera.
+* Visualización dinámica con carátula de álbum y estilo de disco de vinilo.
+* Controles rápidos (Reproducir/Pausar, Anterior, Siguiente y Volumen).
+* Títulos deslizantes y sincronización total con tus apps favoritas (Spotify, YouTube Music, Radio, etc.).
 
-2. **Panel Central (Cluster Digital & Clima)**
-   - **Velocímetro Digital en tiempo real (km/h)** con filtro de suavizado exponencial (Exponential Moving Average) para evitar saltos bruscos.
-   - **Widget del Tiempo en 3 Tarjetas Cuadradas** (+2h, +4h, +6h) con iconos de 24dp, temperatura, hora y porcentaje de lluvia sin recortes.
-   - Cabecera con nombre de ciudad en marquesina, temperatura actual y condición meteorológica.
-   - Controles de estado del vehículo (Modo de conducción, Luces).
+### 2. Cuadro de Instrumentos y Clima
+Toda la información vital de tu entorno y conducción en el centro de la pantalla.
+* **Velocímetro Digital en tiempo real (km/h)**, diseñado con un sistema de suavizado para mostrar la velocidad de forma fluida y sin saltos.
+* **Previsión del tiempo inteligente** que te muestra el clima actual y la predicción de las próximas 6 horas de forma gráfica.
+* Indicadores de estado del vehículo (Modo de conducción y Luces).
 
-3. **Panel Derecho (Navegación & Mapa en Vivo)**
-   - **Mapa interactivo OpenStreetMap (Leaflet)** incrustado mediante WebView que sigue de forma fluida la posición GPS real del vehículo (`map.setView` y `marker.setLatLng` cada 500ms).
-   - Indicador de estado GPS (Verde = Activo con señal / Rojo = Sin señal de satélite).
-   - Botón de acceso rápido para abrir la aplicación de navegación predeterminada (Google Maps, Waze, etc.).
-
----
-
-## 🧭 Barra de Navegación Inferior (Dock)
-
-Situada en la parte inferior de la pantalla, incluye:
-- **Logotipo de Cupra** escalado a 50dp (botón central o acceso rápido).
-- **Accesos directos por categorías**:
-  - **Música** (Music & Audio)
-  - **Audio-Libros** (Audiobooks)
-  - **Navegación** (Maps / GPS)
-  - **Multimedia** (Video / Apps generales)
-- **Gestión inteligente en Modo Invitado**: Si una categoría no tiene app asignada, en modo invitado muestra un aviso flotante y evita abrir el cajón de aplicaciones completo.
+### 3. Navegación y Mapa en Vivo
+Tu ruta siempre visible.
+* **Mapa interactivo integrado** que sigue la posición GPS de tu vehículo de forma fluida y automática.
+* Indicador visual de cobertura satelital.
+* Acceso directo con un solo toque a tu navegador favorito (Google Maps, Waze, etc.).
+* **Modo Noche Automático:** El mapa oscurece sus colores entre las 20:00 y las 06:00 para no deslumbrar en la conducción nocturna.
 
 ---
 
-## ⚙️ Ajustes y Opciones Configurables
+## 🧭 Acceso Rápido (Dock Inferior)
 
-Desde el panel de Ajustes (protegido opcionalmente por PIN de Administrador) se puede configurar:
-- **Modo Invitado / Modo Administrador**: Restricción de apps y ajustes.
-- **Ocultar Aplicaciones**: Selección mediante casillas de verificación de las apps que no deseas mostrar en el cajón ni en modo invitado.
-- **Modo de Clima**: `AUTO_GPS` (actualización dinámica por coordenadas) o `FIXED_CITY` (ciudad fija configurable).
-- **Navegación Predeterminada**: Elección de app de mapas favorita.
-- **Atenuado Leve al Arrancar (20%)**: Oscurecimiento sutil al encender el sistema que se desactiva automáticamente con el primer toque en pantalla.
-- **Salvaspantallas por Inactividad**: Tiempo configurable (5, 10 o 15 minutos).
-- **Variantes de Tema**: Personalización de colores y acentos visuales Cupra.
-- **Estilo de Gráfico del Vehículo**: Visualización del coche (ej. Cupra Formentor).
+En la parte inferior de la pantalla encontrarás un menú de acceso rápido diseñado para pulsarse fácilmente en movimiento:
+* Botón central con el logo de Cupra.
+* Categorías organizadas: **Música, Audiolibros, Navegación y Multimedia**.
 
 ---
 
-## 🛰️ Guía de Diagnóstico: GPS en Raspberry Pi
+## 🔒 Privacidad y Perfiles (Admin / Invitado)
 
-Si en tu **Raspberry Pi** el indicador GPS se queda en **Rojo**, la zona de navegación no se mueve y no marca los km/h (mientras que en otros dispositivos móviles funciona perfectamente), ten en cuenta lo siguiente:
-
-1. **Ausencia de Hardware GPS Interno**:
-   - A diferencia de los smartphones, las placas Raspberry Pi (4 o 5) **no disponen de un chip GPS integrado**.
-   - Si no tienes conectado un **receptor GPS USB** (ej. u-blox u-7/u-8) o un módulo GPS Bluetooth/serial externo compatible con NMEA, el `LocationManager` de Android no recibe ninguna trama de satélites.
-2. **Proveedores de Red (Network Location)**:
-   - Los smartphones obtienen ubicación mediante torres de telefonía y redes Wi-Fi cercanas (Google Play Services / Fused Location). Las Raspberry Pi montadas en vehículos suelen carecer de conexión celular y a menudo de geolocalización Wi-Fi estática, por lo que `NETWORK_PROVIDER` devuelve nulo.
-3. **Cómo verificar y solucionar en Raspberry Pi**:
-   - Conecta un dongle GPS USB compatible con Android (asegúrate de que los drivers del kernel de tu ROM de Android para Raspberry Pi soporten dispositivos ttyACM / ttyUSB).
-   - Instala una app de diagnóstico en la Pi (como *GPS Test*) para comprobar si el sistema operativo ve los satélites.
-   - Si usas posicionamiento simulado o mock locations desde otro dispositivo, asegúrate de activar las opciones de desarrollador y permitir ubicaciones falsas (Mock Locations) en Android.
+¿Prestas el coche o lo dejas en el taller? El launcher incluye un sistema de seguridad para proteger tu privacidad:
+* **Modo Administrador (Protegido por PIN):** Acceso total a todas las aplicaciones y ajustes del sistema.
+* **Modo Invitado:** Restringe el acceso. Si el invitado intenta abrir aplicaciones no permitidas o categorías vacías, el sistema bloqueará la acción de forma inteligente.
+* **Ocultar Apps:** Selecciona qué aplicaciones instaladas en el dispositivo quieres que sean totalmente invisibles.
 
 ---
 
-## 🌙 Modo Noche para el Mapa (Opcional)
+## ⚙️ Personalización a tu Medida
 
-Si deseas añadir un **modo noche** al mapa OpenStreetMap sin sobrecargar de recursos el sistema:
-- **Método recomendado (CartoDB Dark Tiles)**:
-  Modifica la URL de las tesolas en `RightNavWeatherPanel.kt`:
-  ```javascript
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
-  }).addTo(window.map);
-  ```
-  Esto proporciona mapas oscuros nativos optimizados, consumiendo los mismos o incluso menos recursos que las tesolas estándar.
-- **Método alternativo (CSS Inversion)**:
-  Añadir un filtro CSS en el HTML del WebView:
-  ```css
-  .leaflet-tile-pane { filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3); }
-  ```
+Desde el panel de ajustes puedes adaptar el launcher a tu gusto:
+* **Tema y Colores:** Adapta los acentos visuales al estilo Cupra.
+* **Gráfico del Vehículo:** Cambia la imagen de tu coche en la pantalla (ej. Cupra Formentor).
+* **Comportamiento del Clima:** Haz que se actualice por GPS a medida que viajas, o fíjalo en tu ciudad de residencia.
+* **Salvapantallas:** Configura el tiempo de inactividad (5, 10 o 15 minutos).
+* **Modo Confort Visual:** Atenuado suave de la pantalla al arrancar, que vuelve a su brillo normal con el primer toque.
 
 ---
 
-## 🖼️ Configuración del Icono de la Aplicación (`icono.png`)
+## 🛠️ Notas para instalaciones en Raspberry Pi
 
-Para utilizar tu archivo `icono.png` como icono oficial de la aplicación:
+Si estás montando este sistema en una **Raspberry Pi** en lugar de una tablet o radio Android nativa y el mapa no se mueve o el velocímetro está a cero, se debe a una limitación del hardware:
 
-1. **Ubicación recomendada**:
-   - Coloca tu imagen en `app/src/main/res/drawable/icono.png` (o `ic_launcher.png`).
-2. **Declaración en el Manifiesto (`AndroidManifest.xml`)**:
-   Dentro de la etiqueta `<application>`:
-   ```xml
-   android:icon="@drawable/icono"
-   android:roundIcon="@drawable/icono"
-   ```
-3. **Tamaño óptimo**:
-   - Se recomienda que `icono.png` sea de al menos **512x512 píxeles** (formato PNG con transparencia opcional). Android se encargará de escalarlo automáticamente para las distintas densidades de pantalla (hdpi, xhdpi, xxhdpi, xxxhdpi).
+A diferencia de los móviles, las placas Raspberry Pi no tienen antena GPS integrada. 
+* **Solución:** Necesitarás conectar un receptor GPS por USB (como los modelos u-blox). Una vez conectado y detectado por el sistema Android de tu Raspberry, el launcher comenzará a marcar la velocidad y el mapa te seguirá automáticamente.
+
+---
