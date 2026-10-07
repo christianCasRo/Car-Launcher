@@ -1,8 +1,9 @@
 # Cupra Car Launcher
 
-Aplicación Android personalizada diseñada específicamente para su uso en pantallas de vehículos (Car Head Units), tablets en salpicaderos y sistemas embebidos como Raspberry Pi. 
+Aplicación Android personalizada diseñada específicamente para sistemas como Raspberry Pi, pero siendo compatible su uso en pantallas de vehículos (Car Head Units), tablets en salpicaderos, como móviles. 
 
 El proyecto consiste en un launcher completo, inspirado en las líneas de diseño de la marca Cupra (interfaz oscura inmersiva con acentos neón/cobre). Su objetivo es unificar multimedia, telemetría básica (GPS/Velocidad) y navegación en una sola pantalla, incorporando además un sistema de perfiles de usuario para restringir el acceso al sistema.
+
 Es para un proyecto personal, en el que en un coche cupra, no solo el copiloto pueda controlar la música, añadir canciones, o poder tener acceso a la radio multimedia durante el trayecto, sino añadir una capa de entretenimiento a los pasajeros de atrás conectando esta raspberry pi a la entrada USB, y colocando la pantalla tras el asiento. Pudiéndolo usar para modificar la música a través de Spotify connect, o poder usar multimedia como audio libros, o youtube para su uso personal en el trayecto.
 Al desarrollar un launcher completo, se puede usar en radios android, como Head Units, ya que permite el uso completo de todas las características android.
 <img width="1837" height="1172" alt="Captura de pantalla 2026-10-07 095259" src="https://github.com/user-attachments/assets/0b4e84a3-c110-40cd-af64-30cb5c2b8261" />
