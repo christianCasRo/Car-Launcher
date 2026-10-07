@@ -15,19 +15,18 @@ Al desarrollar un launcher completo, se puede usar en radios android, como Head 
 La pantalla principal está dividida en 3 paneles funcionales y un dock inferior para facilitar el manejo táctil rápido:
 
 ### 1. Panel Izquierdo: Reproductor Multimedia
-Integración de un widget multimedia avanzado que captura las sesiones activas de audio del sistema (compatible con Spotify, YouTube Music, Radio, etc.).
-* Renderizado de la carátula del álbum con diseño dinámico en formato disco de vinilo (ocupando el 40% de la altura del panel).
-* Controles de reproducción integrados (Play/Pause, Anterior/Siguiente, Favoritos y Volumen).
-* Sistema de marquesina deslizante automática para títulos de canciones y artistas largos.
+Integración de un widget multimedia avanzado que captura las sesiones activas de audio del sistema (compatible con Spotify, YouTube Music, Radio, AudioLibro, etc.).
+* Renderizado de la carátula del álbum con diseño dinámico en formato disco de vinilo.
+* Controles de reproducción integrados (Play/Pause, Anterior/Siguiente).
+* Sistema deslizante automática para títulos de canciones/artistas largos.
 
 ### 2. Panel Central: Cluster Digital y Clima
 Actúa como cuadro de instrumentos secundario.
 * **Velocímetro Digital (km/h):** Utiliza un algoritmo de suavizado exponencial para procesar los datos de ubicación en tiempo real, evitando saltos bruscos en la numeración en pantalla.
 * **Previsión Meteorológica:** Sistema de tarjetas que muestra el clima actual y una previsión escalonada (+2h, +4h, +6h), incluyendo porcentajes de precipitación y temperatura.
-* **Estado del Vehículo:** Indicadores visuales para el modo de conducción y el estado de las luces.
 
 ### 3. Panel Derecho: Navegación Integrada
-* **Mapa Interactivo:** Visor de mapas integrado (vía OpenStreetMap) que rastrea de forma fluida y en tiempo real la posición GPS del vehículo.
+* **Mapa Interactivo:** Visor de mapas integrado (vía OpenStreetMap) que rastrea de forma 'fluida' y en tiempo real la posición GPS del vehículo.
 * **Monitor de Señal:** Indicador de estado que refleja si el hardware está recibiendo señal de satélites (Verde/Rojo).
 * **Modo Noche:** El mapa invierte su paleta de colores automáticamente entre las 20:00 y las 06:00.
 * **Acceso Directo:** Botón flotante para lanzar la aplicación de navegación primaria del sistema (Maps, Waze, etc.).
@@ -38,8 +37,8 @@ Actúa como cuadro de instrumentos secundario.
 
 Barra persistente para cambiar entre los modos de la pantalla:
 * Botón central principal (logotipo de la marca).
-* Accesos directos categorizados: **Música, Audiolibros, Navegación y Multimedia**.
-* **Lógica de cajón inteligente:** En caso de que una categoría no tenga aplicaciones asignadas o estén restringidas, el sistema muestra un aviso flotante y cancela la apertura del cajón de apps, mejorando la experiencia del Modo Invitado.
+* Accesos directos categorizados ajustables: **Música, Audiolibros, Navegación y Multimedia**.
+* **Lógica inteligente:** En caso de que una categoría no tenga aplicaciones asignadas o estén restringidas, el sistema muestra un aviso flotante y cancela la apertura del cajón de apps, mejorando la experiencia del Modo Invitado. La idea es en el modo admin haber modificado esto antes.
 
 ---
 
@@ -47,11 +46,11 @@ Barra persistente para cambiar entre los modos de la pantalla:
 
 El launcher cuenta con un panel de ajustes propio para personalizar el comportamiento del sistema. Incluye un sistema de seguridad para proteger el dispositivo:
 
-* **Modo Administrador e Invitado:** Posibilidad de bloquear los ajustes mediante PIN. El Modo Invitado restringe los cambios y la apertura de aplicaciones no autorizadas.
+* **Modo Administrador e Invitado:** Posibilidad de bloquear los ajustes mediante PIN. El Modo Invitado restringe los cambios y la apertura de aplicaciones no autorizadas u ocultas.
 * **Gestor de Aplicaciones:** Herramienta para ocultar selectivamente (mediante checkboxes) cualquier aplicación instalada, haciéndola invisible en el cajón general.
 * **Configuración del Clima:** Selección entre actualización dinámica por coordenadas (Auto GPS) o ciudad estática.
 * **Personalización Visual:** Selector de variantes de tema (colores/acentos), selección del modelo de vehículo a mostrar en el gráfico de la pantalla principal y configuración del tiempo de inactividad para el salvapantallas.
-* **Confort Visual:** Función de atenuado leve de pantalla (20%) durante el arranque inicial, que se desactiva con la primera interacción táctil.
+* **Confort Visual:** Función de atenuado leve de pantalla (20%) durante el arranque inicial, que se desactiva con la primera interacción táctil. Tras varios minutos, según se ajuste, bajará a un tono más ocuro.
 
 ---
 
