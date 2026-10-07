@@ -3,6 +3,7 @@
 Aplicación Android personalizada diseñada específicamente para su uso en pantallas de vehículos (Car Head Units), tablets en salpicaderos y sistemas embebidos como Raspberry Pi. 
 
 El proyecto consiste en un launcher vehicular completo, inspirado en las líneas de diseño de la marca Cupra (interfaz oscura inmersiva con acentos neón/cobre). Su objetivo es unificar multimedia, telemetría básica (GPS/Velocidad) y navegación en una sola pantalla, incorporando además un sistema de perfiles de usuario para restringir el acceso al sistema.
+<img width="1837" height="1172" alt="Captura de pantalla 2026-10-07 095259" src="https://github.com/user-attachments/assets/0b4e84a3-c110-40cd-af64-30cb5c2b8261" />
 
 ---
 
