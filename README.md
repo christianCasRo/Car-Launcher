@@ -1,69 +1,60 @@
 # Cupra Car Launcher
 
-Transforma la pantalla de tu vehículo, tablet o sistema integrado en un centro de mando de alta gama. Inspirado en el diseño deportivo de Cupra, este launcher ofrece una interfaz inmersiva, oscura y con acentos de color que moderniza por completo el salpicadero de tu coche.
+Aplicación Android personalizada diseñada específicamente para su uso en pantallas de vehículos (Car Head Units), tablets en salpicaderos y sistemas embebidos como Raspberry Pi. 
 
-Diseñado para evitar distracciones al volante, cuenta con controles grandes, información en tiempo real y un sistema de perfiles para proteger tu configuración.
-
----
-
-## 🌟 Experiencia de Conducción en 3 Paneles
-
-La pantalla principal está dividida de forma inteligente para que tengas todo lo importante a un solo vistazo:
-
-### 1. Panel Multimedia
-Controla tu música sin perder de vista la carretera.
-* Visualización dinámica con carátula de álbum y estilo de disco de vinilo.
-* Controles rápidos (Reproducir/Pausar, Anterior, Siguiente y Volumen).
-* Títulos deslizantes y sincronización total con tus apps favoritas (Spotify, YouTube Music, Radio, etc.).
-
-### 2. Cuadro de Instrumentos y Clima
-Toda la información vital de tu entorno y conducción en el centro de la pantalla.
-* **Velocímetro Digital en tiempo real (km/h)**, diseñado con un sistema de suavizado para mostrar la velocidad de forma fluida y sin saltos.
-* **Previsión del tiempo inteligente** que te muestra el clima actual y la predicción de las próximas 6 horas de forma gráfica.
-* Indicadores de estado del vehículo (Modo de conducción y Luces).
-
-### 3. Navegación y Mapa en Vivo
-Tu ruta siempre visible.
-* **Mapa interactivo integrado** que sigue la posición GPS de tu vehículo de forma fluida y automática.
-* Indicador visual de cobertura satelital.
-* Acceso directo con un solo toque a tu navegador favorito (Google Maps, Waze, etc.).
-* **Modo Noche Automático:** El mapa oscurece sus colores entre las 20:00 y las 06:00 para no deslumbrar en la conducción nocturna.
+El proyecto consiste en un launcher vehicular completo, inspirado en las líneas de diseño de la marca Cupra (interfaz oscura inmersiva con acentos neón/cobre). Su objetivo es unificar multimedia, telemetría básica (GPS/Velocidad) y navegación en una sola pantalla, incorporando además un sistema de perfiles de usuario para restringir el acceso al sistema.
 
 ---
 
-## 🧭 Acceso Rápido (Dock Inferior)
+## 🌟 Estructura de la Interfaz
 
-En la parte inferior de la pantalla encontrarás un menú de acceso rápido diseñado para pulsarse fácilmente en movimiento:
-* Botón central con el logo de Cupra.
-* Categorías organizadas: **Música, Audiolibros, Navegación y Multimedia**.
+La pantalla principal está dividida en 3 paneles funcionales y un dock inferior para facilitar el manejo táctil rápido:
 
----
+### 1. Panel Izquierdo: Reproductor Multimedia
+Integración de un widget multimedia avanzado que captura las sesiones activas de audio del sistema (compatible con Spotify, YouTube Music, Radio, etc.).
+* Renderizado de la carátula del álbum con diseño dinámico en formato disco de vinilo (ocupando el 40% de la altura del panel).
+* Controles de reproducción integrados (Play/Pause, Anterior/Siguiente, Favoritos y Volumen).
+* Sistema de marquesina deslizante automática para títulos de canciones y artistas largos.
 
-## 🔒 Privacidad y Perfiles (Admin / Invitado)
+### 2. Panel Central: Cluster Digital y Clima
+Actúa como cuadro de instrumentos secundario.
+* **Velocímetro Digital (km/h):** Utiliza un algoritmo de suavizado exponencial para procesar los datos de ubicación en tiempo real, evitando saltos bruscos en la numeración en pantalla.
+* **Previsión Meteorológica:** Sistema de tarjetas que muestra el clima actual y una previsión escalonada (+2h, +4h, +6h), incluyendo porcentajes de precipitación y temperatura.
+* **Estado del Vehículo:** Indicadores visuales para el modo de conducción y el estado de las luces.
 
-¿Prestas el coche o lo dejas en el taller? El launcher incluye un sistema de seguridad para proteger tu privacidad:
-* **Modo Administrador (Protegido por PIN):** Acceso total a todas las aplicaciones y ajustes del sistema.
-* **Modo Invitado:** Restringe el acceso. Si el invitado intenta abrir aplicaciones no permitidas o categorías vacías, el sistema bloqueará la acción de forma inteligente.
-* **Ocultar Apps:** Selecciona qué aplicaciones instaladas en el dispositivo quieres que sean totalmente invisibles.
-
----
-
-## ⚙️ Personalización a tu Medida
-
-Desde el panel de ajustes puedes adaptar el launcher a tu gusto:
-* **Tema y Colores:** Adapta los acentos visuales al estilo Cupra.
-* **Gráfico del Vehículo:** Cambia la imagen de tu coche en la pantalla (ej. Cupra Formentor).
-* **Comportamiento del Clima:** Haz que se actualice por GPS a medida que viajas, o fíjalo en tu ciudad de residencia.
-* **Salvapantallas:** Configura el tiempo de inactividad (5, 10 o 15 minutos).
-* **Modo Confort Visual:** Atenuado suave de la pantalla al arrancar, que vuelve a su brillo normal con el primer toque.
+### 3. Panel Derecho: Navegación Integrada
+* **Mapa Interactivo:** Visor de mapas integrado (vía OpenStreetMap) que rastrea de forma fluida y en tiempo real la posición GPS del vehículo.
+* **Monitor de Señal:** Indicador de estado que refleja si el hardware está recibiendo señal de satélites (Verde/Rojo).
+* **Modo Noche:** El mapa invierte su paleta de colores automáticamente entre las 20:00 y las 06:00.
+* **Acceso Directo:** Botón flotante para lanzar la aplicación de navegación primaria del sistema (Maps, Waze, etc.).
 
 ---
 
-## 🛠️ Notas para instalaciones en Raspberry Pi
+## 🧭 Dock de Navegación Inferior
 
-Si estás montando este sistema en una **Raspberry Pi** en lugar de una tablet o radio Android nativa y el mapa no se mueve o el velocímetro está a cero, se debe a una limitación del hardware:
-
-A diferencia de los móviles, las placas Raspberry Pi no tienen antena GPS integrada. 
-* **Solución:** Necesitarás conectar un receptor GPS por USB (como los modelos u-blox). Una vez conectado y detectado por el sistema Android de tu Raspberry, el launcher comenzará a marcar la velocidad y el mapa te seguirá automáticamente.
+Barra persistente para cambiar entre los modos de la pantalla:
+* Botón central principal (logotipo de la marca).
+* Accesos directos categorizados: **Música, Audiolibros, Navegación y Multimedia**.
+* **Lógica de cajón inteligente:** En caso de que una categoría no tenga aplicaciones asignadas o estén restringidas, el sistema muestra un aviso flotante y cancela la apertura del cajón de apps, mejorando la experiencia del Modo Invitado.
 
 ---
+
+## ⚙️ Configuración y Gestión de Perfiles
+
+El launcher cuenta con un panel de ajustes propio para personalizar el comportamiento del sistema. Incluye un sistema de seguridad para proteger el dispositivo:
+
+* **Modo Administrador e Invitado:** Posibilidad de bloquear los ajustes mediante PIN. El Modo Invitado restringe los cambios y la apertura de aplicaciones no autorizadas.
+* **Gestor de Aplicaciones:** Herramienta para ocultar selectivamente (mediante checkboxes) cualquier aplicación instalada, haciéndola invisible en el cajón general.
+* **Configuración del Clima:** Selección entre actualización dinámica por coordenadas (Auto GPS) o ciudad estática.
+* **Personalización Visual:** Selector de variantes de tema (colores/acentos), selección del modelo de vehículo a mostrar en el gráfico de la pantalla principal y configuración del tiempo de inactividad para el salvapantallas.
+* **Confort Visual:** Función de atenuado leve de pantalla (20%) durante el arranque inicial, que se desactiva con la primera interacción táctil.
+
+---
+
+## 🛰️ Notas sobre Hardware (Instalaciones en Raspberry Pi)
+
+El launcher está preparado para funcionar en placas de desarrollo como Raspberry Pi (4 o 5), pero requiere consideraciones específicas de hardware debido a la ausencia de componentes móviles estándar:
+
+1. **Requisito de GPS Externo:** Las placas Raspberry no integran hardware de geolocalización. Para que el velocímetro y el panel de navegación funcionen, es necesario conectar un módulo GPS por USB (ej. receptores u-blox compatibles con NMEA) o Bluetooth.
+2. **Proveedores de Red:** Dado que estas placas no suelen contar con geolocalización por redes móviles/Wi-Fi como los smartphones, el sistema depende 100% de la recepción de satélites física.
+3. **Solución de problemas:** Si el indicador de satélite se muestra en rojo, es necesario verificar que el sistema operativo Android instalado en la Pi tiene los drivers del kernel correctos (ttyACM/ttyUSB) y está configurado para leer el puerto del dongle externo.
